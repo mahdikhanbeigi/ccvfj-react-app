@@ -1,0 +1,112 @@
+import {
+  Canvas,
+  Meta,
+  Story,
+  Preview,
+  SourceState,
+  Source,
+} from "@storybook/addon-docs";
+import Text from "./Text";
+import { Tab, TabContainer } from "../Components/Tab";
+import { CodeSnippets, Highlight } from "@storybook/design-system";
+import * as Form from "./Form.stories";
+import FormGenerator from "../Components/FormGenerator";
+import codeFormGenerator from "!!raw-loader!../Components/FormGenerator/index.tsx";
+import codeFormControl from "!!raw-loader!../Components/FormGenerator/Control.tsx";
+import codeFormGeneratorTypes from "!!raw-loader!../Components/FormGenerator/types.ts";
+import codeCustomInput from "!!raw-loader!../Components/Form/Input.tsx";
+import codeFormProvider from "!!raw-loader!../Components/FormGenerator/Provider.tsx";
+import codeConfigForm from "!!raw-loader!../Components/FormGenerator/configForm.ts";
+import { BasicArgs } from "../data/form";
+
+<Meta title="Documentation/Overview" />
+
+[![Stable Release](https://img.shields.io/npm/v/ccvfj-react-app.svg)](https://npm.im/ccvfj-react-app)
+[![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/ccvfj-react-app)
+
+# Welcome to <Text text={process.env.STORYBOOK_NAME} />
+
+** <Text text={process.env.STORYBOOK_DESC} /> **
+
+Creating validated forms using JSON means defining forms using JSON and validating their input data. Using JSON, you can create forms with simple or complex validation.
+
+In this method, first a JSON containing the definition of form fields and their types is created. Then, this JSON is sent to a form validation library that can perform validation and display error messages to the user.
+
+For example, suppose you want to create a registration form with validation. You can define a JSON that includes fields such as username, password, and password confirmation. Then, you can send this JSON to a form validation library such as Yup. These libraries can perform validation and display error messages to the user.
+
+Using this method, you can create easily validated forms with less code. Additionally, this method allows you to perform validation in a centralized location and avoid repeating code throughout your program.
+
+# why <Text text={process.env.STORYBOOK_NAME+' ?'} />
+
+This form generator can create forms with JSON and is implemented with the popular [formik](https://www.npmjs.com/package/formik) and [yup](https://www.npmjs.com/package/yup) libraries
+
+### Features
+
+- Form-level Validation
+- Only Bootstrap Grid System
+- Support all ui tools
+- Nested form elements
+- Communication between form elements
+
+# Installation
+
+You can install Formik with NPM, Yarn, or a good ol' `<script>` via [unpkg.com](https://unpkg.com/).
+
+## NPM
+
+```javascript
+npm i ccvfj-react-app
+```
+
+Or
+
+```javascript
+yarn add ccvfj-react-app
+```
+
+# The Gist
+
+<TabContainer>
+  <Tab title="React" badge="TS">
+    <Preview className="my-0" mdxSource={codeFormGenerator}>
+      <div className="w-100">
+        <Form.Basic {...BasicArgs} />
+      </div>
+    </Preview>
+  </Tab>
+</TabContainer>
+
+# Config
+
+Below is a suggested method to be able to use form elements for <Text text={process.env.STORYBOOK_NAME} /> and separately, you can directly configure your form components.
+
+This method is so that we can control and configure all the elements of the form at the same time.
+
+<Source language="javascript" dark format={false} code={codeFormControl} />
+
+We create a static model to relate to the properties of our form elements (optional).
+
+<Source
+  language="javascript"
+  dark
+  format={false}
+  code={codeFormGeneratorTypes}
+/>
+
+Below is an example of the input component
+
+<Source language="javascript" dark format={false} code={codeCustomInput} />
+
+<p>create wrapper ui and provider form</p>
+<Source language="javascript" dark format={false} code={codeFormProvider} />
+
+And finally, we configure the form generator with form elements.
+
+This work only needs to be done once and the suggestion is in the App.tsx file.
+
+<Source
+  language="javascript"
+  dark
+  format={false}
+  code={"/// src/App.tsx" + "\n\n" + codeConfigForm}
+/>
