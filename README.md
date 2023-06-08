@@ -1,46 +1,13 @@
-# Getting Started with Create React App
+# Creating validated forms using JSON
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Creating validated forms using JSON means defining forms using JSON and validating their input data. Using JSON, you can create forms with simple or complex validation.
 
-## Available Scripts
+In this method, first a JSON containing the definition of form fields and their types is created. Then, this JSON is sent to a form validation library that can perform validation and display error messages to the user.
 
-In the project directory, you can run:
+For example, suppose you want to create a registration form with validation. You can define a JSON that includes fields such as username, password, and password confirmation. Then, you can send this JSON to a form validation library such as Yup. These libraries can perform validation and display error messages to the user.
 
-### `npm start`
+Using this method, you can create easily validated forms with less code. Additionally, this method allows you to perform validation in a centralized location and avoid repeating code throughout your program.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Document
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Storybook](https://mahdikhanbeigi.github.io/ccvfj-react-app/)
